@@ -1,0 +1,69 @@
+html {
+    overflow-x: hidden;
+    font-family: 'Architects Daughter', cursive;
+}
+
+body {
+    background-image: url('/images/board.jpg');
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.navbar-default .navbar-brand {
+    color: black;
+}
+
+
+.sticky {
+    width: 300px;
+    background: #FFFD75;
+    border: 1px solid black;
+    padding: 10px;
+    padding-top: 0;
+    border-radius: 10px;
+    margin-top: 10px;
+    float: left;
+    margin-right: 10px;
+    margin-left: 15px;
+    height: 200px;
+    position: relative;
+}
+
+.controlButtons {
+    float: right;
+    display: flex;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+.margin-right {
+    margin-right: 5px;
+}
+
+.notes {
+    float: left;
+    max-width: 100%;
+    position: relative;
+    left: 20px;
+}
+
+.task {
+    resize: none;
+}
+
+.headline {
+    width: 50%;
+}
+
+.time {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+}
+
+p {
+    -ms-word-break: break-all;
+    word-break: break-all;
+}
