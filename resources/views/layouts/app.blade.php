@@ -80,6 +80,16 @@
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="{{ asset('js/app.js') }}"></script>
+    <script>
+        $('.edit').click(function() {
+
+            var modal = $('#editModal');
+
+            modal.find('#headline').val($(this).data('headline'));
+            modal.find('#body').val($(this).data('body'));
+            modal.find('form').attr('action', 'todo/update/' + $(this).data('id'));
+        });
+    </script>
 
 </body>
 </html>

@@ -36,7 +36,12 @@
                 <p>{{$thing->body}}</p>
                 <small class="time">{{$thing->created_at ? $thing->created_at->diffForHumans() : $thing->updated_at->diffForHumans()}}</small>
                 <div class="controlButtons">
-                    <button class="btn btn-success margin-right fa fa-pencil-square-o" data-toggle="modal" data-target="#editModal"> Edit</button>
+                    <button class="btn btn-success margin-right fa fa-pencil-square-o edit"
+                            data-toggle="modal"
+                            data-target="#editModal"
+                            data-id="{{$thing->id}}"
+                            data-headline="{{$thing->headline}}"
+                            data-body="{{$thing->body}}"> Edit</button>
                     {!! Form::open(['method' => 'DELETE', 'route' => ['todo.destroy', $thing->id]]) !!}
                     {!! Form::button(' Delete', ['class'=>'btn btn-danger fa fa-trash','type'=>'submit']) !!}
                     {!! Form::close() !!}
@@ -63,9 +68,9 @@
                         <div class="modal-body">
                             {!! Form::model($thing, ['method'=>'PUT', 'route'=>['todo.update', $thing->id]]) !!}
                             {!! Form::label('headline', 'Title:') !!}
-                            {!! Form::text('headline', null, ['class'=>'form-control']) !!}
+                            {!! Form::text('headline', null, ['class'=>'form-control','id'=>'headline']) !!}
                             {!! Form::label('body', 'Task Content:') !!}
-                            {!! Form::textarea('body', null, ['class'=>'form-control task', 'size'=>'50x2']) !!}
+                            {!! Form::textarea('body', null, ['class'=>'form-control task', 'id'=>'body', 'size'=>'50x2']) !!}
                             <div class="modal-footer">
                             {!! Form::submit('Update Task', ['class'=>'btn btn-primary']) !!}
                             {!! Form::button('Close', ['class'=>'btn btn-danger', 'data-dismiss'=>'modal']) !!}
